@@ -4,6 +4,11 @@ A light, mobile-first scam check for unknown phone numbers and WhatsApp messages
 
 Paste a number to see what country it is from and whether it carries common scam warning signs, with Singapore rules built in — +65 3 is VoIP, 8/9 is mobile, +422 is unassigned, +1 Caribbean codes are a common Wangiri trap, and 1900 is premium-rate.
 
+## Kids version
+
+- `kids.html` — the same checker, redesigned kid-friendly: brighter colours, simpler words, and a traffic light — 🔴 STOP don't answer / 🟡 WAIT ask a grown-up / 🟢 OKAY still be careful. Same ScamShield and 1799 buttons, same checker logic.
+- Once Pages is enabled, it will be at https://athyyna.github.io/phone-scam-checker-sg/kids.html
+
 ## What it does
 
 - Number checker: country and Singapore range, with a caution level — not a safe/unsafe verdict, because caller ID can be spoofed.

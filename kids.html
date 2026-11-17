@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Scam Check Light — For Kids</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e0f2fe; --bg2:#fef9c3; --card:#ffffff; --ink:#172554; --muted:#475569; --line:#bae6fd;
+  --blue:#0284c7; --blue-dark:#0369a1; --yellow:#f59e0b; --yellow-bg:#fef3c7;
+  --red:#dc2626; --red-bg:#fee2e2; --green:#16a34a; --green-bg:#dcfce7;
+  --coral:#f97316; --radius:24px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0c1a2e; --bg2:#1e293b; --card:#162032; --ink:#f0f9ff; --muted:#a5b4c4; --line:#1e3a4c; --yellow-bg:#3a2a0a; --red-bg:#3f1515; --green-bg:#14301c; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 55%,var(--bg2) 130%);color:var(--ink);font-family:"Nunito",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:580px;margin:0 auto;padding:18px 16px 36px}
+.hero{text-align:center;padding:8px 4px 4px}
+.hero-emoji{font-size:44px;line-height:1;display:block;margin-bottom:8px}
+h1{font-family:"Fredoka", "Nunito",sans-serif;font-size:34px;line-height:1.05;margin:0 0 8px;letter-spacing:-.01em;font-weight:700}
+h1 .hl{color:var(--blue)}
+.sub{color:var(--muted);font-size:17px;font-weight:700;margin:0 auto 16px;max-width:420px}
+.legend{display:flex;gap:8px;margin-bottom:14px}
+.legend-item{flex:1;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:10px 6px;text-align:center}
+.legend-dot{width:26px;height:26px;border-radius:50%;margin:0 auto 6px;border:3px solid rgba(0,0,0,.08)}
+.legend-item b{display:block;font-size:13px;line-height:1.1;font-family:"Fredoka",sans-serif;letter-spacing:.02em}
+.legend-item span{font-size:12px;color:var(--muted);font-weight:700;line-height:1.2;display:block;margin-top:2px}
+.dot-red{background:#ef4444}.dot-yellow{background:#facc15}.dot-green{background:#22c55e}
+.card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px;box-shadow:0 6px 0 rgba(2,132,199,.08)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:58px;border-radius:999px;font-weight:900;font-size:17px;text-decoration:none;padding:13px 14px;text-align:center;border:2px solid transparent;font-family:"Fredoka",sans-serif;letter-spacing:.01em}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 0 var(--blue-dark)}
+.btn-primary:active{transform:translateY(2px);box-shadow:0 2px 0 var(--blue-dark)}
+.btn-call{background:var(--ink);color:#fff}
+@media (prefers-color-scheme: dark){ .btn-call{background:#f0f9ff;color:#172554} }
+.btn-ghost{background:var(--card);color:var(--ink);border-color:var(--line);font-weight:800}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:380px){.grid2{grid-template-columns:1fr}}
+label{font-weight:900;font-size:17px;display:block;margin-bottom:10px;font-family:"Fredoka",sans-serif}
+.row{display:flex;gap:8px}
+input[type=tel]{flex:1;min-height:58px;border:2.5px solid var(--line);border-radius:999px;padding:0 18px;font-size:18px;font-weight:800;background:#f0f9ff;color:var(--ink);min-width:0;outline:none}
+input[type=tel]:focus{border-color:var(--blue);background:#fff}
+@media (prefers-color-scheme: dark){ input[type=tel]{background:#0c1a2e} input[type=tel]:focus{background:#162032} }
+button.check{min-height:58px;padding:0 20px;border:0;border-radius:999px;background:var(--coral);color:#fff;font-weight:900;font-size:17px;cursor:pointer;white-space:nowrap;font-family:"Fredoka",sans-serif;box-shadow:0 4px 0 #c2410c}
+button.check:active{transform:translateY(2px);box-shadow:0 2px 0 #c2410c}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{min-height:38px;padding:7px 13px;border-radius:999px;border:2px solid var(--line);background:var(--card);font-size:13.5px;font-weight:800;cursor:pointer;color:var(--muted)}
+.chip:active{border-color:var(--blue);color:var(--blue)}
+.result{display:none;margin-top:16px;border-radius:20px;padding:16px;border:2.5px solid transparent}
+.result.show{display:block}
+.result.high{background:var(--red-bg);border-color:#fca5a5}
+.result.caution{background:var(--yellow-bg);border-color:#fcd34d}
+.result.ok{background:var(--green-bg);border-color:#86efac}
+.tl{display:flex;align-items:center;gap:7px;background:#172554;border-radius:999px;padding:7px 10px;width:fit-content;margin-bottom:10px}
+.tl i{width:22px;height:22px;border-radius:50%;display:block;opacity:.22}
+.tl i.r{background:#ef4444}.tl i.y{background:#facc15}.tl i.g{background:#22c55e}
+.tl i.on{opacity:1;box-shadow:0 0 0 3px rgba(255,255,255,.35);transform:scale(1.12)}
+.result h3{margin:0 0 6px;font-size:21px;line-height:1.15;font-family:"Fredoka",sans-serif}
+.result p{margin:5px 0;font-size:15.5px;font-weight:700}
+.badge{display:inline-block;font-size:12.5px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--ink);color:#fff;margin-bottom:2px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.steps li{display:flex;gap:12px;align-items:flex-start;background:#f0f9ff;border-radius:16px;padding:12px}
+@media (prefers-color-scheme: dark){ .steps li{background:#0c1a2e} }
+.num{width:38px;height:38px;flex:0 0 38px;border-radius:50%;color:#fff;display:grid;place-items:center;font-weight:900;font-size:17px;font-family:"Fredoka",sans-serif}
+.n1{background:#ef4444}.n2{background:#f59e0b}.n3{background:#8b5cf6}.n4{background:#0284c7}.n5{background:#16a34a}
+.steps b{display:block;font-size:16.5px;font-family:"Fredoka",sans-serif;letter-spacing:.01em}
+.steps span{font-size:14.5px;color:var(--muted);font-weight:700;line-height:1.4;display:block}
+.steps span.num{color:#fff;font-size:17px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+td,th{padding:10px 6px;border-bottom:2px dashed var(--line);text-align:left;vertical-align:top}
+tr:last-child td{border-bottom:0}
+.pill{font-weight:900;white-space:nowrap;font-family:"Fredoka",sans-serif}
+.small{font-size:13.5px;color:var(--muted);font-weight:700}
+a{color:var(--blue)}
+ul.tight{margin:6px 0 0;padding:0;list-style:none;font-size:15px;font-weight:700}
+ul.tight li{margin:10px 0;display:flex;gap:10px;align-items:flex-start;line-height:1.4}
+.mini-dot{width:14px;height:14px;border-radius:50%;flex:0 0 14px;margin-top:4px}
+h2{font-size:20px;margin:0 0 12px;font-family:"Fredoka",sans-serif;line-height:1.15}
+.footer{font-size:12.5px;color:var(--muted);font-weight:700;text-align:center;margin-top:16px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <span class="hero-emoji" aria-hidden="true">🔍📱</span>
+    <h1>Strange number?<br><span class="hl">Let’s check it!</span></h1>
+    <p class="sub">Don’t answer yet. Paste the number below and see what the traffic light says.</p>
+  </div>
+
+  <div class="legend" aria-label="What the colours mean">
+    <div class="legend-item"><div class="legend-dot dot-red"></div><b>🔴 STOP</b><span>Don’t answer</span></div>
+    <div class="legend-item"><div class="legend-dot dot-yellow"></div><b>🟡 WAIT</b><span>Ask a grown-up</span></div>
+    <div class="legend-item"><div class="legend-dot dot-green"></div><b>🟢 OKAY*</b><span>Still be careful</span></div>
+  </div>
+
+  <div class="grid2" style="margin-bottom:8px">
+    <a class="btn btn-primary" href="https://www.scamshield.gov.sg/" target="_blank" rel="noopener">🛡️ Open ScamShield</a>
+    <a class="btn btn-call" href="tel:1799">📞 Call 1799</a>
+  </div>
+  <p class="small" style="margin:0 0 16px;text-align:center">ScamShield is free &nbsp;•&nbsp; 1799 helps any time, day or night</p>
+
+  <section class="card" aria-labelledby="check-h">
+    <label id="check-h" for="num">👇 Paste the number here</label>
+    <div class="row">
+      <input type="tel" id="num" placeholder="+65 9123 4567" autocomplete="off" inputmode="tel">
+      <button class="check" id="go">Check it!</button>
+    </div>
+    <div class="chips">
+      <button class="chip" data-ex="+4221234567">Try a tricky one: +422</button>
+      <button class="chip" data-ex="+6531234567">Try +65 3… internet phone</button>
+      <button class="chip" data-ex="+18095551234">Try +1 809… trick</button>
+      <button class="chip" data-ex="+6591234567">Try +65 9… mobile</button>
+    </div>
+    <div id="result" class="result" role="status" aria-live="polite"></div>
+    <p class="small" style="margin-top:12px">⭐ Even a green light can be a trick! Bad guys can fake a number so it <i>looks</i> real. If you’re not sure, always ask a grown-up.</p>
+  </section>
+
+  <section class="card">
+    <h2>🌟 Your 5 super rules</h2>
+    <ol class="steps">
+      <li><span class="num n1">1</span><div><b>STOP — Don’t pick up straight away</b><span>Let it ring. If it rings only once, never call back!</span></div></li>
+      <li><span class="num n2">2</span><div><b>LOOK — Do you know this person?</b><span>WhatsApp from another country? No photo? No groups together? Be careful.</span></div></li>
+      <li><span class="num n3">3</span><div><b>LISTEN — Are they rushing you?</b><span>If they say “quick, quick!”, ask for secret codes, Singpass, or money — hang up! That’s a trick.</span></div></li>
+      <li><span class="num n4">4</span><div><b>ASK — Check with a grown-up</b><span>Ask Mum, Dad, or a grown-up you trust. Or call 1799 together. Never call back the strange number to ask.</span></div></li>
+      <li><span class="num n5">5</span><div><b>BLOCK — Block and tell</b><span>Block the number on your phone / WhatsApp, and tell a grown-up. You can also report it in ScamShield.</span></div></li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>🇸🇬 Singapore numbers (+65)</h2>
+    <table>
+      <tr><td class="pill">8 / 9xxx xxxx</td><td><b>Mobile phone</b> — like most phones in Singapore</td></tr>
+      <tr><td class="pill">6xxx xxxx</td><td><b>Home or office phone</b></td></tr>
+      <tr><td class="pill">3xxx xxxx</td><td><b>Internet phone</b> — be extra careful with these</td></tr>
+      <tr><td class="pill">1900…</td><td><b>Costs money!</b> Don’t call these back</td></tr>
+      <tr><td class="pill">+65 with “+”</td><td>Calling from overseas. It might be faked — don’t answer if you weren’t expecting it</td></tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>⚠️ Tricky numbers to watch for</h2>
+    <ul class="tight">
+      <li><span class="mini-dot dot-red"></span><span><b>+422</b> — No country uses this. It’s not real. Don’t answer!</span></li>
+      <li><span class="mini-dot dot-red"></span><span><b>+1 809 / 829 / 849, 876, 268, 473</b> — Looks like USA, but it’s far away in the Caribbean. Calling back can cost a lot.</span></li>
+      <li><span class="mini-dot dot-yellow"></span><span><b>+232, +234, +269</b> — Often used for the one-ring trick. Don’t call back!</span></li>
+      <li><span class="mini-dot dot-yellow"></span><span>Any surprise call from overseas — let it go to voicemail. A real person will leave a message.</span></li>
+    </ul>
+    <p class="small" style="margin-top:12px">Numbers from nearby places:<br>+60 Malaysia · +62 Indonesia · +63 Philippines · +66 Thailand · +84 Vietnam · +852 Hong Kong · +86 China · +91 India · +44 UK · +1 USA / Canada</p>
+  </section>
+
+  <a class="btn btn-ghost" href="https://www.scamshield.gov.sg/" target="_blank" rel="noopener" style="margin-bottom:10px">Got a strange message? Check it in ScamShield →</a>
+  <p class="small" style="text-align:center">For grown-ups: If money was lost, call your bank first, then <a href="https://eservices1.police.gov.sg/" target="_blank" rel="noopener">make a police report</a>. Telling ScamShield is helpful, but it’s not the same as a police report.</p>
+
+  <p class="footer">Made for quick checks on your phone.<br>We guess the country from the number only — numbers can be faked.</p>
+</div>
+<script>
+var CC = {
+  "852":{n:"Hong Kong",t:"Fixed / mobile"}, "886":{n:"Taiwan",t:"Fixed / mobile"},
+  "422":{n:"Not assigned",t:"Unassigned code"},
+  "65":{n:"Singapore",t:""}, "60":{n:"Malaysia",t:""}, "62":{n:"Indonesia",t:""}, "63":{n:"Philippines",t:""}, "66":{n:"Thailand",t:""}, "84":{n:"Vietnam",t:""}, "81":{n:"Japan",t:""}, "82":{n:"South Korea",t:""}, "86":{n:"China",t:""}, "91":{n:"India",t:""}, "44":{n:"United Kingdom",t:""}, "61":{n:"Australia",t:""}, "64":{n:"New Zealand",t:""},
+  "232":{n:"Sierra Leone",t:""}, "234":{n:"Nigeria",t:""}, "269":{n:"Comoros",t:""},
+  "1":{n:"USA / Canada",t:""}
+};
+var CARIB = {"268":"Antigua & Barbuda","284":"British Virgin Islands","473":"Grenada","649":"Turks & Caicos","767":"Dominica","809":"Dominican Republic","829":"Dominican Republic","849":"Dominican Republic","876":"Jamaica"};
+var WANGIRI = {"232":1,"234":1,"269":1};
+
+function clean(v){
+  v = (v||"").trim().replace(/[\s\-\(\)\.]/g,"");
+  if(v.indexOf("00")===0) v = "+"+v.slice(2);
+  if(v && v[0]!=="+"){
+    if(/^65[0-9]{8}$/.test(v)) v="+"+v;
+    else if(/^[3689][0-9]{7}$/.test(v)) v="+65"+v;
+    else if(/^[0-9]+$/.test(v)) v="+"+v;
+  }
+  return v;
+}
+function check(){
+  var raw = document.getElementById("num").value;
+  var v = clean(raw);
+  var box = document.getElementById("result");
+  function tl(level){
+    var r = level==="high" ? "on" : "";
+    var y = level==="caution" ? "on" : "";
+    var g = level==="ok" ? "on" : "";
+    return '<div class="tl" aria-hidden="true"><i class="r '+r+'"></i><i class="y '+y+'"></i><i class="g '+g+'"></i></div>';
+  }
+  function show(level,badge,title,body){
+    box.className="result show "+level;
+    box.innerHTML= tl(level) + '<span class="badge">'+badge+'</span><h3>'+title+'</h3>'+body;
+  }
+  if(!v || v.length<4){ show("caution","🟡 Wait — need more numbers","Type the whole number","<p>Start with the country code, like +65… Then tap Check it!</p>"); return; }
+  var digits = v.slice(1);
+  if(digits.indexOf("422")===0){
+    show("high","🔴 Stop — Don't answer","+422 is not a real place","<p>No country uses +422. Don’t answer, don’t call back. Block it and tell a grown-up.</p>"); return;
+  }
+  if(digits[0]==="1"){
+    var area = digits.slice(1,4);
+    if(CARIB[area]){
+      show("high","🔴 Stop — It's a trick","Looks like USA, but it's "+CARIB[area]+" (+1 "+area+")","<p>This is a one-ring trick from the Caribbean. Don’t call back — it can cost lots of money.</p>"); return;
+    }
+    show("caution","🟡 Wait — Ask a grown-up","From USA / Canada (+1)","<p>Were you expecting this call? If not, let it ring. Never call back a one-ring call.</p>"); return;
+  }
+  var code=null, info=null;
+  [3,2].forEach(function(len){ if(!code){ var c=digits.slice(0,len); if(CC[c]){code=c; info=CC[c];} }});
+  if(!info){ show("caution","🟡 Wait — We don't know this one","We can't tell where it's from","<p>Number: <b>"+v+"</b>. If it’s a surprise, don’t answer and don’t call back. Ask a grown-up, check ScamShield, or call 1799.</p>"); return; }
+  var nat = digits.slice(code.length);
+  if(code==="65"){
+    if(nat.indexOf("1900")===0){ show("high","🔴 Stop — Costs money!","Singapore 1900 number","<p>Calling this number costs money. Don’t call back.</p>"); return; }
+    var d=nat[0];
+    if(d==="3"){ show("caution","🟡 Wait — Be extra careful","Singapore internet phone (+65 3…)","<p>This is an internet phone, not a normal mobile. It might still be okay, but if it asks for money, secret codes, or Singpass — hang up and ask a grown-up or call 1799.</p>"); return; }
+    if(d==="8"||d==="9"){ show("ok","🟢 Looks okay","Singapore mobile phone (+65 "+d+"…)","<p>This looks like a normal Singapore mobile. But remember — numbers can be faked! If the person rushes you or asks for money or codes, hang up and call 1799.</p>"); return; }
+    if(d==="6"){ show("ok","🟢 Looks okay","Singapore home / office phone (+65 6…)","<p>This looks like a home or office phone. If it’s a surprise, or it asks for money or secret codes, hang up and ask a grown-up.</p>"); return; }
+    show("caution","🟡 Wait — Ask a grown-up","Singapore number (+65)","<p>Number: <b>"+v+"</b>. If it’s a surprise, let it ring and tell a grown-up.</p>"); return;
+  }
+  if(WANGIRI[code]){
+    show("caution","🟡 Wait — One-ring trick","+"+code+" — "+info.n,"<p>This place is often used for the one-ring trick. If it rang only once, don’t call back! Let it go to voicemail.</p>"); return;
+  }
+  show("caution","🟡 Wait — Ask a grown-up","+"+code+" — "+info.n,"<p>This is from another country. If you weren’t expecting it, don’t answer and don’t call back. Not sure? Check ScamShield or ask a grown-up.</p>");
+}
+document.getElementById("go").addEventListener("click",check);
+document.getElementById("num").addEventListener("keydown",function(e){ if(e.key==="Enter") check(); });
+document.querySelectorAll(".chip").forEach(function(c){ c.addEventListener("click",function(){ document.getElementById("num").value=c.getAttribute("data-ex"); check(); }); });
+</script>
+</body>
+</html>
