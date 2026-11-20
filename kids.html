@@ -21,20 +21,21 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 55%,var(--bg2) 130%);color:var(--ink);font-family:"Nunito",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-tap-highlight-color:transparent}
-.wrap{max-width:580px;margin:0 auto;padding:18px 16px 36px}
-.hero{text-align:center;padding:8px 4px 4px}
-.hero-emoji{font-size:44px;line-height:1;display:block;margin-bottom:8px}
-h1{font-family:"Fredoka", "Nunito",sans-serif;font-size:34px;line-height:1.05;margin:0 0 8px;letter-spacing:-.01em;font-weight:700}
+.wrap{max-width:580px;margin:0 auto;padding:10px 16px 36px}
+.hero{text-align:center;padding:2px 4px 8px}
+.hero-emoji{font-size:28px;line-height:1;display:inline-block;margin:0 4px 0 0;vertical-align:middle}
+h1{font-family:"Fredoka", "Nunito",sans-serif;font-size:27px;line-height:1.1;margin:0 0 4px;letter-spacing:-.01em;font-weight:700}
 h1 .hl{color:var(--blue)}
-.sub{color:var(--muted);font-size:17px;font-weight:700;margin:0 auto 16px;max-width:420px}
-.legend{display:flex;gap:8px;margin-bottom:14px}
-.legend-item{flex:1;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:10px 6px;text-align:center}
-.legend-dot{width:26px;height:26px;border-radius:50%;margin:0 auto 6px;border:3px solid rgba(0,0,0,.08)}
-.legend-item b{display:block;font-size:13px;line-height:1.1;font-family:"Fredoka",sans-serif;letter-spacing:.02em}
-.legend-item span{font-size:12px;color:var(--muted);font-weight:700;line-height:1.2;display:block;margin-top:2px}
+.sub{color:var(--muted);font-size:14.5px;font-weight:700;margin:0 auto;max-width:440px;line-height:1.35}
+.legend{display:flex;gap:8px;margin-bottom:10px}
+.legend-item{flex:1;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:7px 4px;text-align:center}
+.legend-dot{width:18px;height:18px;border-radius:50%;margin:0 auto 3px;border:3px solid rgba(0,0,0,.08)}
+.legend-item b{display:block;font-size:12px;line-height:1.1;font-family:"Fredoka",sans-serif;letter-spacing:.02em}
+.legend-item span{font-size:11.5px;color:var(--muted);font-weight:700;line-height:1.2;display:block;margin-top:1px}
 .dot-red{background:#ef4444}.dot-yellow{background:#facc15}.dot-green{background:#22c55e}
 .card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px;box-shadow:0 6px 0 rgba(2,132,199,.08)}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:58px;border-radius:999px;font-weight:900;font-size:17px;text-decoration:none;padding:13px 14px;text-align:center;border:2px solid transparent;font-family:"Fredoka",sans-serif;letter-spacing:.01em}
+.card-check{padding:14px 14px 12px;margin-bottom:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:999px;font-weight:900;font-size:16px;text-decoration:none;padding:10px 12px;text-align:center;border:2px solid transparent;font-family:"Fredoka",sans-serif;letter-spacing:.01em}
 .btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 0 var(--blue-dark)}
 .btn-primary:active{transform:translateY(2px);box-shadow:0 2px 0 var(--blue-dark)}
 .btn-call{background:var(--ink);color:#fff}
@@ -42,27 +43,27 @@ h1 .hl{color:var(--blue)}
 .btn-ghost{background:var(--card);color:var(--ink);border-color:var(--line);font-weight:800}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:380px){.grid2{grid-template-columns:1fr}}
-label{font-weight:900;font-size:17px;display:block;margin-bottom:10px;font-family:"Fredoka",sans-serif}
+label{font-weight:900;font-size:16.5px;display:block;margin-bottom:8px;font-family:"Fredoka",sans-serif}
 .row{display:flex;gap:8px}
-input[type=tel]{flex:1;min-height:58px;border:2.5px solid var(--line);border-radius:999px;padding:0 18px;font-size:18px;font-weight:800;background:#f0f9ff;color:var(--ink);min-width:0;outline:none}
+input[type=tel]{flex:1;min-height:54px;border:2.5px solid var(--line);border-radius:999px;padding:0 16px;font-size:18px;font-weight:800;background:#f0f9ff;color:var(--ink);min-width:0;outline:none}
 input[type=tel]:focus{border-color:var(--blue);background:#fff}
 @media (prefers-color-scheme: dark){ input[type=tel]{background:#0c1a2e} input[type=tel]:focus{background:#162032} }
-button.check{min-height:58px;padding:0 20px;border:0;border-radius:999px;background:var(--coral);color:#fff;font-weight:900;font-size:17px;cursor:pointer;white-space:nowrap;font-family:"Fredoka",sans-serif;box-shadow:0 4px 0 #c2410c}
+button.check{min-height:54px;padding:0 18px;border:0;border-radius:999px;background:var(--coral);color:#fff;font-weight:900;font-size:16.5px;cursor:pointer;white-space:nowrap;font-family:"Fredoka",sans-serif;box-shadow:0 4px 0 #c2410c}
 button.check:active{transform:translateY(2px);box-shadow:0 2px 0 #c2410c}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.chip{min-height:38px;padding:7px 13px;border-radius:999px;border:2px solid var(--line);background:var(--card);font-size:13.5px;font-weight:800;cursor:pointer;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{min-height:34px;padding:5px 11px;border-radius:999px;border:2px solid var(--line);background:var(--card);font-size:12.5px;font-weight:800;cursor:pointer;color:var(--muted)}
 .chip:active{border-color:var(--blue);color:var(--blue)}
-.result{display:none;margin-top:16px;border-radius:20px;padding:16px;border:2.5px solid transparent}
+.result{display:none;margin-top:12px;border-radius:18px;padding:13px 14px;border:2.5px solid transparent}
 .result.show{display:block}
 .result.high{background:var(--red-bg);border-color:#fca5a5}
 .result.caution{background:var(--yellow-bg);border-color:#fcd34d}
 .result.ok{background:var(--green-bg);border-color:#86efac}
-.tl{display:flex;align-items:center;gap:7px;background:#172554;border-radius:999px;padding:7px 10px;width:fit-content;margin-bottom:10px}
-.tl i{width:22px;height:22px;border-radius:50%;display:block;opacity:.22}
+.tl{display:flex;align-items:center;gap:6px;background:#172554;border-radius:999px;padding:5px 8px;width:fit-content;margin-bottom:8px}
+.tl i{width:19px;height:19px;border-radius:50%;display:block;opacity:.22}
 .tl i.r{background:#ef4444}.tl i.y{background:#facc15}.tl i.g{background:#22c55e}
 .tl i.on{opacity:1;box-shadow:0 0 0 3px rgba(255,255,255,.35);transform:scale(1.12)}
-.result h3{margin:0 0 6px;font-size:21px;line-height:1.15;font-family:"Fredoka",sans-serif}
-.result p{margin:5px 0;font-size:15.5px;font-weight:700}
+.result h3{margin:0 0 4px;font-size:19px;line-height:1.15;font-family:"Fredoka",sans-serif}
+.result p{margin:4px 0;font-size:14.5px;font-weight:700;line-height:1.4}
 .badge{display:inline-block;font-size:12.5px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--ink);color:#fff;margin-bottom:2px}
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .steps li{display:flex;gap:12px;align-items:flex-start;background:#f0f9ff;border-radius:16px;padding:12px}
@@ -88,10 +89,25 @@ h2{font-size:20px;margin:0 0 12px;font-family:"Fredoka",sans-serif;line-height:1
 <body>
 <div class="wrap">
   <div class="hero">
-    <span class="hero-emoji" aria-hidden="true">🔍📱</span>
-    <h1>Strange number?<br><span class="hl">Let’s check it!</span></h1>
-    <p class="sub">Don’t answer yet. Paste the number below and see what the traffic light says.</p>
+    <h1><span class="hero-emoji" aria-hidden="true">🔍📱</span>Strange number? <span class="hl">Let’s check it!</span></h1>
+    <p class="sub">Don’t answer yet — paste the number and see what the traffic light says.</p>
   </div>
+
+  <section class="card card-check" aria-labelledby="check-h">
+    <label id="check-h" for="num">👇 Paste the number here</label>
+    <div class="row">
+      <input type="tel" id="num" placeholder="+65 9123 4567" autocomplete="off" inputmode="tel">
+      <button class="check" id="go">Check it!</button>
+    </div>
+    <div id="result" class="result" role="status" aria-live="polite"></div>
+    <div class="chips">
+      <button class="chip" data-ex="+4221234567">Try a tricky one: +422</button>
+      <button class="chip" data-ex="+6531234567">Try +65 3… internet phone</button>
+      <button class="chip" data-ex="+18095551234">Try +1 809… trick</button>
+      <button class="chip" data-ex="+6591234567">Try +65 9… mobile</button>
+    </div>
+    <p class="small" style="margin-top:10px">⭐ Even a green light can be a trick! Bad guys can fake a number so it <i>looks</i> real. If you’re not sure, always ask a grown-up.</p>
+  </section>
 
   <div class="legend" aria-label="What the colours mean">
     <div class="legend-item"><div class="legend-dot dot-red"></div><b>🔴 STOP</b><span>Don’t answer</span></div>
@@ -99,27 +115,11 @@ h2{font-size:20px;margin:0 0 12px;font-family:"Fredoka",sans-serif;line-height:1
     <div class="legend-item"><div class="legend-dot dot-green"></div><b>🟢 OKAY*</b><span>Still be careful</span></div>
   </div>
 
-  <div class="grid2" style="margin-bottom:8px">
+  <div class="grid2" style="margin-bottom:6px">
     <a class="btn btn-primary" href="https://www.scamshield.gov.sg/" target="_blank" rel="noopener">🛡️ Open ScamShield</a>
     <a class="btn btn-call" href="tel:1799">📞 Call 1799</a>
   </div>
   <p class="small" style="margin:0 0 16px;text-align:center">ScamShield is free &nbsp;•&nbsp; 1799 helps any time, day or night</p>
-
-  <section class="card" aria-labelledby="check-h">
-    <label id="check-h" for="num">👇 Paste the number here</label>
-    <div class="row">
-      <input type="tel" id="num" placeholder="+65 9123 4567" autocomplete="off" inputmode="tel">
-      <button class="check" id="go">Check it!</button>
-    </div>
-    <div class="chips">
-      <button class="chip" data-ex="+4221234567">Try a tricky one: +422</button>
-      <button class="chip" data-ex="+6531234567">Try +65 3… internet phone</button>
-      <button class="chip" data-ex="+18095551234">Try +1 809… trick</button>
-      <button class="chip" data-ex="+6591234567">Try +65 9… mobile</button>
-    </div>
-    <div id="result" class="result" role="status" aria-live="polite"></div>
-    <p class="small" style="margin-top:12px">⭐ Even a green light can be a trick! Bad guys can fake a number so it <i>looks</i> real. If you’re not sure, always ask a grown-up.</p>
-  </section>
 
   <section class="card">
     <h2>🌟 Your 5 super rules</h2>
@@ -193,6 +193,16 @@ function check(){
   function show(level,badge,title,body){
     box.className="result show "+level;
     box.innerHTML= tl(level) + '<span class="badge">'+badge+'</span><h3>'+title+'</h3>'+body;
+    // Keep the result in view without the reader having to hunt for it:
+    // only nudge the page if the result would fall outside the viewport.
+    try{
+      var r = box.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      if(r.top < 0 || r.bottom > vh){
+        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        box.scrollIntoView({block:"nearest", behavior: reduce ? "auto" : "smooth"});
+      }
+    }catch(e){}
   }
   if(!v || v.length<4){ show("caution","🟡 Wait — need more numbers","Type the whole number","<p>Start with the country code, like +65… Then tap Check it!</p>"); return; }
   var digits = v.slice(1);
